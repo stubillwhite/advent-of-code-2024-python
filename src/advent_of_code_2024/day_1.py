@@ -24,7 +24,7 @@ def solution_part_one(s: str) -> int:
 
 
 def solution_part_two(s: str) -> int:
-    (l1, l2) = [x for x in parse_input(s)]
+    (l1, l2) = parse_input(s)
     frequencies = {k: len(list(vs)) for k, vs in groupby(sorted(l2))}
     similarities = [x * frequencies.get(x, 0) for x in l1]
     return sum(similarities)
