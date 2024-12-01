@@ -4,9 +4,6 @@
 COLOR_BLUE=\033[0;34m
 COLOR_NONE=\033[0m
 
-SHELL=zsh
-.SHELLFLAGS=-i
-
 PYTHON=python3
 PIP=pip
 
