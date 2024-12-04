@@ -6,7 +6,7 @@ def problem_input() -> str:
     return read_text("resources", "day-2-input.txt")
 
 
-def parse_input(s: str) -> list[list[int]]:
+def _parse_input(s: str) -> list[list[int]]:
     return [[int(x) for x in line.split()] for line in s.splitlines()]
 
 
@@ -23,7 +23,7 @@ def _is_safe(xs: list[int]) -> bool:
 
 
 def solution_part_one(s: str) -> int:
-    levels = parse_input(s)
+    levels = _parse_input(s)
     safe_levels = [x for x in levels if _is_safe(x)]
     return len(safe_levels)
 
@@ -38,7 +38,7 @@ def _dampen(xs: list[int]) -> Generator[None, None, list[int]]:
 
 
 def solution_part_two(s: str) -> int:
-    levels = parse_input(s)
+    levels = _parse_input(s)
     safe_levels = [level for level in levels if any([_is_safe(x) for x in _dampen(level)])]
     return len(safe_levels)
 
