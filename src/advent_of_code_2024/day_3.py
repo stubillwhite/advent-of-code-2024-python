@@ -1,12 +1,12 @@
 import re
 from dataclasses import dataclass, replace
 from functools import reduce
-from importlib.resources import read_text
+from importlib.resources import files
 from typing import Any
 
 
 def problem_input() -> str:
-    return read_text("resources", "day-3-input.txt")
+    return files("resources").joinpath("day-3-input.txt").read_text()
 
 
 @dataclass
