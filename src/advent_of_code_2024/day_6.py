@@ -1,12 +1,12 @@
 from copy import deepcopy
 from dataclasses import dataclass
 from enum import Enum, auto
-from importlib.resources import read_text
+from importlib.resources import files
 from typing import Dict, List, Set, Tuple
 
 
 def problem_input() -> str:
-    return read_text("resources", "day-6-input.txt")
+    return files("resources").joinpath("day-6-input.txt").read_text()
 
 
 class Facings:
