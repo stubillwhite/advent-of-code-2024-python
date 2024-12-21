@@ -1,7 +1,6 @@
 import functools
 from collections import defaultdict
 from importlib.resources import files
-
 from typing import List, Mapping, Tuple
 
 type Rules = Mapping[int, List[int]]
@@ -11,7 +10,6 @@ type Update = List[int]
 
 def problem_input() -> str:
     return files("resources").joinpath("day-5-input.txt").read_text()
-
 
 
 def _parse_input(s: str) -> Tuple[Rules, list[Update]]:

@@ -1,6 +1,7 @@
 from importlib.resources import files
+from typing import Dict, Tuple
 
-Grid = dict[tuple[int, int], str]
+Grid = Dict[Tuple[int, int], str]
 
 
 def problem_input() -> str:

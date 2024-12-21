@@ -2,7 +2,7 @@ from importlib.resources import files
 from typing import Callable, List, Tuple
 
 
-def parse_input(s: str) -> List[Tuple[int, List[int]]]:
+def _parse_input(s: str) -> List[Tuple[int, List[int]]]:
 
     def parse_line(line: str) -> Tuple[int, List[int]]:
         result, operands = line.split(":")
@@ -38,7 +38,7 @@ def problem_input() -> str:
 
 
 def solution_part_one(s: str) -> int:
-    sums = parse_input(s)
+    sums = _parse_input(s)
     operators = [add, mult]
     valid = [s for s in sums if satisfiable(operators, s[0], s[1])]
     return sum([result for result, _ in valid])
@@ -48,7 +48,7 @@ def solution_part_one(s: str) -> int:
 
 
 def solution_part_two(s: str) -> int:
-    sums = parse_input(s)
+    sums = _parse_input(s)
     operators = [add, mult, concat]
     valid = [s for s in sums if satisfiable(operators, s[0], s[1])]
     return sum([result for result, _ in valid])
